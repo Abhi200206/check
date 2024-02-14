@@ -7,8 +7,8 @@ function App() {
 
   return (
     <div>
-      <div className='flex justify-between'>
-        <div className='flex gap-[10px]  py-[10px] md:flex md:justify-betwwn'>
+      <div className='flex:1 justify-between'>
+        <div className='flex:1 gap-[10px]  py-[10px] md:flex:1 md:justify-betwwn'>
           <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="md:hidden   w-8 h-8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
@@ -20,7 +20,7 @@ function App() {
         </svg>
         </div>
       </div>
-      <div className='flex justify-between'>
+      <div className='flex:1 justify-between'>
         <Para p={"Choose your new site"} />
         <div className='pt-2 '>
           <svg className='md:w-[250px] ' width="160" height="32" viewBox="0 0 250 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@ function App() {
       <div className=''>
         <div>
           <Para p={"Theme Park Site"} />
-          <div className='flex pl-2'>
+          <div className='flex:1 pl-2'>
             <div><svg className='h-[18px] ' width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <mask id="mask0_1_448" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
                 <rect y="0.5" width="24" height="24" fill="#D9D9D9" />
@@ -127,7 +127,7 @@ function App() {
             </svg>
 
           </div>
-          <div className='ml-2 flex border-[1px] border-[#4375FB] w-[185px]    '>
+          <div className='ml-2 flex:1 border-[1px] border-[#4375FB] w-[185px]    '>
             <div >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_2336_196" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
