@@ -4,16 +4,38 @@ import Rendercomp from './components/Rendercomp';
 
 
 function App() {
-
+  const [val, setVal] = useState(false)
 
   return (
     <div className='w-[100%] '>
+      {val && <div className='w-[100%] bg-white absolute left-[0px] top-[55px] text-center md:hidden'>
+        <div className='border-[1px] border-[#0000004D] py-2 flex justify-center' >
+          <img className='w-[90px] ' src="https://s3-alpha-sig.figma.com/img/a5bc/30ff/51ee070e1af90ee613daa41e47038862?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DGwOu3BXrloiOAELY5~7X5OfWY7AIBKRc-Iuvbtgr-xRv6YY5fzwoZyLaTfmueWJfxlrnuHXpN5sIqzQ3Ua7TefAWqCGmWKQQzM0hKY3lhNx1DPUm8GLPSnVGaVhrC7cV9Jt354XkMPm1mLT~Scsr-5k5N19Ry8mVVrRhWpzaii-C66RNAtOEm5FFzFZ9ylYnQQNBk353lObl3qs1XSBuhdJVWllQm1LYow~mRY9IaHLGCLrJXfK~UnzQ23VcPPj4xvJhgqR2fV64gug75DLPtJBO7IHPuFF-MTKoLjYIO0CdA4yjB99PWmRg~OiOt4O84ZEmfnS6LJUYXEKnhlOgQ__" alt="" />
+        </div>
+        <div>
+          <div className='py-2 border-[1px] border-[#0000004D] '><p className='text-[#0000004D] font-[300] text-[18px] leading-[23.76px] '>Cart</p></div>
+        </div>
+        <div>
+          <div className='py-2 border-[1px] border-[#0000004D] '><p className='text-[#000000] font-[700] text-[18px] leading-[23.76px] '>Cart</p></div>
+        </div>
+        <div>
+          <div className='py-2 border-[1px] border-[#0000004D] '><p className='text-[#0000004D] font-[300] text-[18px] leading-[23.76px] '>Settings</p></div>
+        </div>
+        <div>
+          <div className='py-2 border-[1px] border-[#0000004D] '><p className='text-[#0000004D] font-[300] text-[18px] leading-[23.76px] '>logout</p></div>
+        </div>
+      </div>}
       <div className='flex  justify-between'>
-        <div className='flex  gap-[10px]  py-[10px] md:flex  md:justify-betwwn'>
-          <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="md:hidden   w-8 h-8">
+        <div className='flex  gap-[10px]  py-[10px] md:flex  md:justify-between'>
+          {!val ? <div onClick={() => { setVal((v) => (!v)) }}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="md:hidden   w-8 h-8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          </div>
+          </div> :
+            <div onClick={() => { setVal((v) => (!v)) }}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="md:hidden w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+            </div>
+          }
           <div className='rounded bg-[#4375FB] h-[35px] text-white text-center px-[28px] py-[5px] '>Complete Profile</div>
         </div>
         <div><svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-10  pt-[13px] h-10  ">
@@ -200,21 +222,22 @@ function App() {
           </div>
           <div className='flex justify-end  '>
             <div className='border-[1px] border-[#4375FB] flex p-4 mb-2 cursor-pointer '>
-            <div><p className='font-sans text-[#4375FB] font-[400] text-[14px] leading-[18.48px] pl-[8px] '>Schedule a call </p></div>
-            <div ><svg className='pt-1 ' width="13" height="14" viewBox="0 0 12 13" fill="#4375FB" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_2852_175" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13">
-                <rect x="12" y="12.3892" width="12" height="12" transform="rotate(-180 12 12.3892)" fill="#D9D9D9" />
-              </mask>
-              <g mask="url(#mask0_2852_175)">
-                <path d="M4 1.38916L9 6.38916L4 11.3892L3.1125 10.5017L7.225 6.38916L3.1125 2.27666L4 1.38916Z" fill="#4375FB" />
-              </g>
-            </svg>
-            </div>
+              <div><p className='font-sans text-[#4375FB] font-[400] text-[14px] leading-[18.48px] pl-[8px] '>Schedule a call </p></div>
+              <div ><svg className='pt-1 ' width="13" height="14" viewBox="0 0 12 13" fill="#4375FB" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_2852_175" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13">
+                  <rect x="12" y="12.3892" width="12" height="12" transform="rotate(-180 12 12.3892)" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_2852_175)">
+                  <path d="M4 1.38916L9 6.38916L4 11.3892L3.1125 10.5017L7.225 6.38916L3.1125 2.27666L4 1.38916Z" fill="#4375FB" />
+                </g>
+              </svg>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
+
 
     </div>
   )
