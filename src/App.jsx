@@ -2,15 +2,72 @@ import { useState } from 'react';
 import Para from './components/Para';
 import Rendercomp from './components/Rendercomp';
 import Btncmp from './components/Btncmp';
+import Btn2cmp from './components/Btn2cmp'
 
 
 function App() {
-  const [stp,setStp]=useState({
-    step0:{bool:false,style:"font-sans font-[700] text-[22px] leading-[42.24px] tracking-[-0.32px]"},
-    step1:false,
-    sterp2:false
-  })
-  const [val, setVal] = useState(false)
+  
+  const [val, setVal] = useState(false);
+  const [step,setStep]=useState({
+    bool:false,
+    p:"Complete Profile",
+    stept:"Download",
+    stepf:"Complete",
+    date:"12/12/2023",
+    parat:"font-[400] text-[19px] ",
+    paraf:"font-sans font-[700] text-[22px] leading-[42.24px] tracking-[-0.32px] ",
+    firstadd:"Good job!",
+    secondadd:"Complete"
+  });
+  const [step1,setStep1]=useState({
+    bool:false,
+    p:"Step 1",
+    stept:"Receipt",
+    stepf:"Pay",
+    date:"14/12/2023",
+    parat:"font-[400] text-[19px] ",
+    paraf:"font-sans font-[700] text-[22px] leading-[42.24px] tracking-[-0.32px] ",
+    firstadd:"5% of total amount",
+    secondadd:"RS 1,00,000"
+  });
+  const [step2,setStep2]=useState({
+    bool:false,
+    p:"Step 2",
+    stept:"Download",
+    stepf:"Pay",
+    date:"15/12/2023",
+    parat:"font-[400] text-[19px] ",
+    paraf:"font-sans font-[700] text-[22px] leading-[42.24px] tracking-[-0.32px] ",
+    firstadd:"",
+    secondadd:"Complete"
+  });
+  function call()
+  {
+    setStep((v)=>{
+      return {
+        ...v,
+        bool:true
+      }
+    })
+  }
+  function call1()
+  {
+    setStep1((v)=>{
+      return {
+        ...v,
+        bool:true
+      }
+    })
+  }
+  function call2()
+  {
+    setStep2((v)=>{
+      return {
+        ...v,
+        bool:true
+      }
+    })
+  }
 
   return (
     <div className='md:grid md:grid-cols-8 '>
@@ -263,12 +320,12 @@ function App() {
             </div>
           </div>
           <div>
-            <Btncmp styl={stp.step0.style} p={"Complete Profile"} value={"Complete"} />
-            <Btncmp p={"Step 1"} value={"pay"} />
-            <Btncmp p={"Step 2"} value={"Complete"} />
-            <Btncmp p={"Step 3"} value={"Complete"} />
-            <Btncmp p={"Step 4"} value={"Complete"} />
-            <Btncmp p={"Step 5"} value={"Complete"} />
+            <Btncmp call={call}  step={step}  />
+           {step.bool?<Btncmp call={call1}  step={step1}  />: <Btn2cmp  p={"Step 1"} value={"pay"} />}
+           {step1.bool?<Btncmp call={call2}  step={step2}  />: <Btn2cmp  p={"Step 2"} value={"Pay"} />}
+            <Btn2cmp p={"Step 3"} value={"Complete"} />
+            <Btn2cmp p={"Step 4"} value={"Complete"} />
+            <Btn2cmp p={"Step 5"} value={"Complete"} />
           </div>
         </div>
       </div>
